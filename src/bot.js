@@ -15,7 +15,8 @@ bot.telegram.setWebhook(domain + webhookPath)
 
 bot.on("text", async (ctx) => {
     console.log(ctx.update)
-    ctx.reply("Цыган лох, но этот момент великий")
+    ctx.replyWithHTML("Привет, я твой главный друг по тайм-менеджменту. Присылай мне свои заметки, планы, важные события - я все сохраню, а потом наглядно покажу)")
+
 })
 
 bot.catch(error => {
