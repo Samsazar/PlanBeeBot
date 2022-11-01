@@ -4,7 +4,7 @@ const product = require("./api/product");
 const { bot } = require('./src/bot')
 const webhookPath = `/mysuperpath`
 
-
+// ошибка в чтении токена
 app.use(express.json({ extended: false }));
 app.use("/api/product", product);
 
