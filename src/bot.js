@@ -6,7 +6,7 @@ const bot = new Telegraf(BOT_TOKEN)
 
 bot.telegram.setWebhook(domain + webhookPath)
   .then(console.log)
-  
+
 // const handlers = require('./handlers')
 // const { commandArgs } = require('./plugins')
 
@@ -15,6 +15,7 @@ bot.telegram.setWebhook(domain + webhookPath)
 
 bot.on("text", async (ctx) => {
     console.log(ctx.update)
+    ctx.reply("Цыган лох, но этот момент великий")
 })
 
 bot.catch(error => {
