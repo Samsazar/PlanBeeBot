@@ -1,14 +1,18 @@
 const express = require("express");
 const app = express();
 const product = require("./api/product");
+const { bot } = require('./src/bot')
+const webhookPath = `/mysuperpath`
+
 
 app.use(express.json({ extended: false }));
-
 app.use("/api/product", product);
+
+app.use(bot.webhookCallback(webhookPath));
 
 app.get("/", async (req, res) => {
     try {
-      res.send("bombino")
+      res.send("bombino");
     } catch (error) {
       console.error(error);
       return res.status(500).send("Server error");
