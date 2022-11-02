@@ -8,4 +8,5 @@ async function connect() {
         .catch((error) => console.log(error))
 }
 
+connect()
 module.exports = { connect }
