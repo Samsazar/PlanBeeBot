@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     tgid: {
-        type: BigInt,
+        type: String,
         required: true
     },
     name: {

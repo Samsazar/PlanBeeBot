@@ -15,7 +15,7 @@ bot.telegram.setWebhook(domain + webhookPath)
 // bot.use(handlers)
 bot.command("reg", async (ctx) => {
   console.log(ctx.update)
-  const tgid = ctx.from.id;
+  const tgid = String(ctx.from.id);
   const name = ctx.from.first_name;
   const user = User({tgid, name});
   user
