@@ -5,8 +5,6 @@ const domain = process.env.DOMAIN
 const webhookPath = `/mysuperpath`
 const bot = new Telegraf(BOT_TOKEN)
 
-connect();
-
 bot.telegram.setWebhook(domain + webhookPath)
   .then(console.log)
 
@@ -19,9 +17,9 @@ bot.command("reg", async (ctx) => {
   console.log(ctx.update)
   const tgid = String(ctx.from.id);
   const name = ctx.from.first_name;
-  await connect();
-  const user = User({tgid, name});
-  user
+  connect();
+  const newuser = new User({tgid, name});
+  newuser
     .save()
     .then((result) => console.log(result))
     .catch((error) => console.log(error))
