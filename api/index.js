@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-const product = require("./api/product");
-const { bot } = require('./src/bot')
+const product = require("./product");
+const { bot } = require('../src/bot')
 const webhookPath = `/mysuperpath`
 
 // ошибка в чтении токена
