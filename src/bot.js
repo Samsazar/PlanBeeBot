@@ -19,6 +19,7 @@ bot.command("reg", async (ctx) => {
   console.log(ctx.update)
   const tgid = String(ctx.from.id);
   const name = ctx.from.first_name;
+  await connect();
   const user = User({tgid, name});
   user
     .save()
