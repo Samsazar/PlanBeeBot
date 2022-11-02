@@ -1,4 +1,4 @@
-const { db } = require('./initdb')
+const { connect } = require('./initdb')
 const { User } = require('./user')
 
-module.exports = { db, User }
+module.exports = { connect, User }

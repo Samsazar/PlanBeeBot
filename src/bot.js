@@ -1,9 +1,11 @@
 const { Telegraf } = require('telegraf')
-const { mongoose, User } = require("./database")
+const { connect, User } = require("./database")
 const BOT_TOKEN = process.env.TOKEN
 const domain = process.env.DOMAIN
 const webhookPath = `/mysuperpath`
 const bot = new Telegraf(BOT_TOKEN)
+
+connect();
 
 bot.telegram.setWebhook(domain + webhookPath)
   .then(console.log)
