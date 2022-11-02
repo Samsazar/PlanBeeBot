@@ -1,5 +1,5 @@
 const { Telegraf } = require('telegraf')
-const { db, User } = require("./database")
+const { mongoose, User } = require("./database")
 const BOT_TOKEN = process.env.TOKEN
 const domain = process.env.DOMAIN
 const webhookPath = `/mysuperpath`
