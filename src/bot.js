@@ -30,13 +30,14 @@ bot.command("reg", async (ctx) => {
   ctx.reply("Вы зареганы")
 })
 
-bot.on("text", async (ctx) => {
-    console.log(ctx.update)
-    ctx.replyWithHTML("Привет, я твой главный друг по тайм-менеджменту. Присылай мне свои заметки, планы, важные события - я все сохраню, а потом наглядно покажу)")
-})
+// bot.on("text", async (ctx) => {
+//     console.log(ctx.update)
+//     ctx.replyWithHTML("Привет, я твой главный друг по тайм-менеджменту. Присылай мне свои заметки, планы, важные события - я все сохраню, а потом наглядно покажу)")
+// })
 
 bot.command("start", (ctx) => {
-  ctx.telegram.sendMessage(ctx.chat.id, "Hi");
+  console.log(ctx.update)
+  ctx.replyWithHTML("Привет, я твой главный друг по тайм-менеджменту. Присылай мне свои заметки, планы, важные события - я все сохраню, а потом наглядно покажу)")
 })
 
 // bot.getEvents().onCommand("start", [&bot](TgBot::Message::Ptr message) {
