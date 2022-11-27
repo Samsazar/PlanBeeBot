@@ -1,6 +1,6 @@
 import {MongoClient} from 'mongodb'
 
-export default await MongoClient.connect(process.env.MONGODB_URI)
+export default MongoClient.connect(process.env.MONGODB_URI)
 // const mongoose = require("mongoose")
 
 // async function connect() {
