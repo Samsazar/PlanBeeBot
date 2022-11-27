@@ -1,5 +1,6 @@
+import mongo from "./database/initdb"
 const { Telegraf } = require('telegraf')
-const { connect, User } = require("./database")
+// const { connect, User } = require("./database")
 const BOT_TOKEN = process.env.TOKEN
 const domain = process.env.DOMAIN
 const webhookPath = `/mysuperpath`
@@ -13,6 +14,9 @@ bot.telegram.setWebhook(domain + webhookPath)
 
 // bot.use(commandArgs())
 // bot.use(handlers)
+
+bot.command('db', async (msg) => msg.reply(mongo.db().databaseName))
+
 bot.command("reg", async (ctx) => {
   console.log(ctx.update)
   const tgid = String(ctx.from.id);
@@ -31,9 +35,17 @@ bot.on("text", async (ctx) => {
     ctx.replyWithHTML("Привет, я твой главный друг по тайм-менеджменту. Присылай мне свои заметки, планы, важные события - я все сохраню, а потом наглядно покажу)")
 })
 
+bot.command("start", (ctx) => {
+  ctx.telegram.sendMessage(ctx.chat.id, "Hi");
+})
+
+// bot.getEvents().onCommand("start", [&bot](TgBot::Message::Ptr message) {
+//   bot.getApi().sendMessage(message->chat->id, "Hi!");
+// });
+
 
 bot.catch(error => {
   console.log(error)
-})
+}) 
 
 module.exports = { bot }
